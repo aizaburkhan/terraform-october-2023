@@ -49,17 +49,22 @@ resource "null_resource" "cluster" {
   }
   provisioner "remote-exec" {
     inline = [
-      "ssh ec2-user@${aws_instance.web.public_ip} bash jenkinsRun.sh",
+      "chmod +x ./jenkinsRun.sh", 
+      "./jenkinsRun.sh args", 
     ]
-  }
-  depends_on = [time_sleep.wait_300_seconds]
+     }
+  # depends_on = [time_sleep.wait_300_seconds]
 }
+    # [
+      # "ssh ec2-user@${aws_instance.web.public_ip} bash jenkinsRun.sh",
+    # ]
+
+# resource "time_sleep" "wait_300_seconds" {
+#   create_duration = "300s"
+#   # depends_on = [ aws_instance.web ]
+# }
 
 
-resource "time_sleep" "wait_300_seconds" {
-  create_duration = "300s"
-  # depends_on = [ aws_instance.web ]
-}
 
 # resource "terraform_data" "StrictHostKeyCheckingFalse" {
 #   provisioner "local-exec" {

@@ -1,4 +1,5 @@
-# Configure the AWS Provider
+# Configure the AWS Provider 
+#when you want to apply this code, run terraform apply --var-file x.tfvars (x stands for the region) 
 provider "aws" {
   region = var.region
 }

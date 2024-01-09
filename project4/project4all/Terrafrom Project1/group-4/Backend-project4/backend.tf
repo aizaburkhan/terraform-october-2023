@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket = "s3-statefile-backends"
     key    = "virginia/terraform.tfstate"
-    region = "virginia.tfvars"
+    region = "us-east-1"
     dynamodb_table = "lock-state" 
   }
 }
@@ -31,7 +31,7 @@ terraform {
   backend "s3" {
     bucket = "s3-statefile-backends"
     key    = "california/terraform.tfstate"
-    region = var.region
+    region = "us-west-1"
     dynamodb_table = "lock-state"
   }
 }

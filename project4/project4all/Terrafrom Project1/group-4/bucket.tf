@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "bucket" {
   bucket = "s3-statefile-backends"
+  # region = var.region
 }
 
 # resource "aws_dynamodb_table" "basic-dynamodb-table" {
