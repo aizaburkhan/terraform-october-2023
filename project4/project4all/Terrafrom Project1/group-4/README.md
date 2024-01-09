@@ -9,7 +9,7 @@ module "jenkins" {
     subnet1_cidr_block = "10.0.1.0/24"
     subnet2_cidr_block = "10.0.2.0/24"
     subnet3_cidr_block = "10.0.3.0/24"
-    instance_type = "t2.micro"
+    instance_type = "t2.large"
     key_name = "my-key"
     type = true
 }
